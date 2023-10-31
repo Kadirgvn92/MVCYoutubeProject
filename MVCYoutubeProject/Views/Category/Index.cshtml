@@ -2,10 +2,8 @@
 @{
     ViewData["Title"] = "Categories";
 }
-@if(TempData["success"] != null){
-    <br />
-    <h2 style="text-align:center">@TempData["success"]</h2>
-}
+
+<partial name="_Notification"></partial>
    <div class="container p-3" style="margin-left:0px;">
        <div class="row p-4">
            <div class="col-6 text-start">
