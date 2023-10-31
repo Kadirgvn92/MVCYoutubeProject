@@ -1,7 +1,8 @@
 # <p align="center">ASP.NET MVC Youtube Project</p>
 
-Hello there, I did a project with ASP.NET. 
-- I connnected my project with MS SQL.
+Hello there, 
+I have learned some basic principle of ASP.NET Core MVC and I did a project with that. 
+- With Youtube tutorial, I connnected my project with MS SQL on "Code-First" principle.
 - I successfuly managed CRUD process with Razor Pages.
 
 <h2 align="center">Home</h2>
