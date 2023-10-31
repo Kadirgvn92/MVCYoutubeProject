@@ -1,8 +1,11 @@
 ﻿@model IEnumerable<Category>
 @{
-    ViewData["Title"] = "Index";
+    ViewData["Title"] = "Categories";
 }
-
+@if(TempData["success"] != null){
+    <br />
+    <h2 style="text-align:center">@TempData["success"]</h2>
+}
    <div class="container p-3" style="margin-left:0px;">
        <div class="row p-4">
            <div class="col-6 text-start">
@@ -16,8 +19,8 @@
        </div>
    </div>
 
-    <table class="table table-bordered table-striped"style="width:100%" >
-        <thead>
+    <table class="table table-bordered" style="width:100%" >
+        <thead class="table-dark text-success">
             <tr>
                 <th>
                     Category Name
@@ -25,9 +28,12 @@
                 <th>
                     Display Order
                 </th>
+                <th>
+
+                </th>
             </tr>
         </thead>
-        <tbody >
+        <tbody class="table-dark" >
             @foreach (var obj in Model)
             {
                 <tr>
@@ -36,6 +42,14 @@
                     </td>
                     <td width:30%>
                         @obj.DisplayOrder
+                    </td>
+                    <td>
+                        <div class="w-75 btn-group" role="group">
+                            <a asp-controller="Category" asp-action="Edit" asp-route-id="@obj.Id"
+                            class="btn btn-primary mx-2"> <i class="bi bi-pencil-square"></i>Edit</a>
+                            <a asp-controller="Category" asp-action="Delete" asp-route-id="@obj.Id"
+                           class="btn btn-danger mx-2"> <i class="bi bi-trash-fill"></i>Delete</a>
+                        </div>
                     </td>
                 </tr>
             }
